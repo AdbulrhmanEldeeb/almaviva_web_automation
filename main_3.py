@@ -92,7 +92,6 @@ def select_options(driver):
 
 def click_check_availability(driver):
     try:
-        check_availability = driver.find_element(By.CSS_SELECTOR, '#cdk-step-content-0-0 > app-memebers-number > div.flex.flex-col.lg\:flex-row.lg\:justify-end > div > button')
         check_availability.click()
         print(f"Check availability button clicked at {datetime.datetime.now().time()}")
     except NoSuchElementException:
@@ -126,6 +125,7 @@ for i in range(15):
         print(f"An error occurred while setting up driver {i + 1}: {e}")
 
 # الانتظار حتى الوقت المحدد
+check_availability = driver.find_element(By.CSS_SELECTOR, '#cdk-step-content-0-0 > app-memebers-number > div.flex.flex-col.lg\:flex-row.lg\:justify-end > div > button')
 wait_until_time(target_time)
 
 # تنفيذ الضغط على زر التحقق من التوافر لكل متصفح
